@@ -19,7 +19,8 @@ def readTemperature():
         dataStr = ''.join([chr(c) for c in data])
         dataBytes = bytes(dataStr, encoding="raw_unicode_escape")
 
-        temp = struct.unpack('<f', dataBytes)
+        temp = struct.unpack('<f'
+                             , dataBytes)
         print('Received temp: {0} = {1:.2f}'.format(data, temp[0]))
         return temp[0]
     except Exception as e:
