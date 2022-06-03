@@ -5,22 +5,27 @@
 # Controls leds in the GPIO
 #
 # Autor: Pérez Gutiérrez Sandra
+#	 César Martínez
+#        Lisset Noriega Domínguez
 # License: MIT
 #
 # ## ###############################################
 
-# Future imports (Python 2.7 compatibility)
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+# ## ###############################################
+#
+# program: marquee.py
+# Blinks a led on pin 32 using Raspberry Pi
+#
+# Autor: 
+# License: MIT
+#
+# ## ###############################################
+
 
 # Import Raspberry Pi's GPIO control library
 import RPi.GPIO as GPIO
 # Imports sleep functon
 from time import sleep
-# Initializes virtual board (comment out for hardware deploy)
-#import virtualboard
-
 
 #Array con los pines de los leds
 leds_array = [12,16,18,22,24,26,32]
@@ -40,7 +45,6 @@ def leds(num):
         for led in leds_array:
             GPIO.output(led, GPIO.LOW)  # Turn led off
         if num == 7:
-            print("CLiked")
             GPIO.output(32, GPIO.HIGH)  # Turn led
 
         if num == 6:
