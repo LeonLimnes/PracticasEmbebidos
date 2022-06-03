@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 # ## ###############################################
 #
-# marquee.py
-# Blinks a led on pin 32 using Raspberry Pi
+# program: marquee4.py
+# Marquee with variable speed
 #
 # Autor: César Martínez
+#        Lisset Noriega Domínguez
 # License: MIT
 #
 # ## ###############################################
-
 
 # Import Raspberry Pi's GPIO control library
 import RPi.GPIO as GPIO
