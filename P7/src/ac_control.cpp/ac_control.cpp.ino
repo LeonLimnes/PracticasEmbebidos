@@ -1,3 +1,18 @@
+/*
+# ## ###############################################
+#
+# program: ac_control.cpp.ino
+# Controls power given to an AC load
+# with valures recived from I2C bus.
+#
+# Autor: César Martínez
+#        Lisset Noriega Domínguez
+# License: MIT
+#
+# ## ###############################################
+
+*/
+
 #include <Wire.h>
 
 // Constants
@@ -45,6 +60,7 @@ void setup(void){
   // Blink led on interrupt
   pinMode(BOARD_LED, OUTPUT);
 
+  //Table that stores the corresponding trigger times for a given power factor
   convertionTable = (float*)calloc(100,sizeof(float));
   populateTable(convertionTable);
 }
@@ -82,6 +98,8 @@ void showPower(){
 
 }
 
+//Add the numerical values to the convertionTable
+//in this case, adds values 5 by 5
 void populateTable(float *convertionTable){
   convertionTable[0] = 10.00;
   convertionTable[5] = 7.668;
@@ -105,7 +123,10 @@ void populateTable(float *convertionTable){
   convertionTable[95] = 2.060;
   convertionTable[100] = 1.000;   
 }
-  
+
+//Convert the flaoting point value of power
+// into an int value rounding it to the closest
+// multiple of 5
 int intPot(float r){
     int n = (int)r;
     int d = 5;
@@ -118,6 +139,8 @@ int intPot(float r){
         return n+(d-mod);
 }
 
+// Funciton that converts the flaot power to int and
+// the gets its trigger time from the table
 void convertPower(){
   intPower = intPot(power);
   triggerTime = convertionTable[intPower];
@@ -125,29 +148,20 @@ void convertPower(){
 }
 
 void loop(){
-
+  //Dipslay the value of the current power factor used.
   showPower();
-  /*
-  if(!flag){
-    // Slack until next interrupt
-    delay(1);
-    return;
-  }
-  flag = !flag;
-  */
-
+ 
 }
 
+//Interruption handler whe rising edge occurs
+
 void zxhandle(){
-  digitalWrite(13, LOW);
  
   if(intPower != 0){
+    //trigger time
     delayMicroseconds(triggerTime*1000);
     digitalWrite(TRIAC, HIGH);
     delayMicroseconds(10);
-    // Disable power
     digitalWrite(TRIAC, LOW);;
   }
-   
-  //digitalWrite(13, HIGH);
 }
