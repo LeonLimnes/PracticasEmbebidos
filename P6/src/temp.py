@@ -1,3 +1,15 @@
+# ## ###############################################
+#
+# program: bcd.py
+# Recives binay values and shows its BCD representation on a
+# display
+#
+# Autor: César Martínez
+#        Lisset Noriega Domínguez
+# License: MIT
+#
+# ## ###############################################
+
 import smbus2
 import struct
 import time
@@ -11,22 +23,24 @@ LOG_FILE = './temp.log'
 # RPI version 1 requires smbus.SMBus(0)
 i2c = smbus2.SMBus(1)
 
+# Read the temperature measure form the i2c bus
 def readTemperature():
     try:
         msg = smbus2.i2c_msg.read(SLAVE_ADDR, 4)
         i2c.i2c_rdwr(msg)
         data = list(msg)
         dataStr = ''.join([chr(c) for c in data])
+        #Convert the string into bytes with raw encoding
         dataBytes = bytes(dataStr, encoding="raw_unicode_escape")
 
-        temp = struct.unpack('<f'
-                             , dataBytes)
+        temp = struct.unpack('<f', dataBytes)
         print('Received temp: {0} = {1:.2f}'.format(data, temp[0]))
         return temp[0]
     except Exception as e:
         print("Error reading")
         print(e)
         return None
+#Saves deta into loga file
 def log_temp(temperature):
     try:
         with open(LOG_FILE, 'a+') as fp:
