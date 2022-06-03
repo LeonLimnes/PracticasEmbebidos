@@ -5,10 +5,11 @@
 # -*- coding: utf-8 -*-
 # ## ###############################################
 #
-# blink.py
-# Blinks a led on pin 32 using Raspberry Pi
+# program: blink.py
+# 
 #
-# Autor: Mauricio Matamoros
+# Autor: César Augusto Martínez Franco
+#        Lisset Noriega Domínguez
 # License: MIT
 #
 # ## ###############################################
