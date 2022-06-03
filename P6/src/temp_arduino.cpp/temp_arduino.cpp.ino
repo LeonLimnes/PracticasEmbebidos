@@ -1,3 +1,19 @@
+/*
+# ## ###############################################
+#
+# program: temp_arduino.cpp.ino
+# Reads the temperature values from LM35 conigured
+# in full range mode
+#
+# Autor: Mauricio Matamoros
+# License: MIT
+#
+# ## ###############################################
+
+*/
+
+
+
 #define VAREF 2.7273
 // Prototypes
 float read_temp(void);
