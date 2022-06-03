@@ -1,3 +1,15 @@
+# ## ###############################################
+#
+# program: temp_arduino.cpp.ino
+# Reads the temperature values from LM35 conigured
+# in full range mode
+#
+# Autor: Mauricio Matamoros
+# License: MIT
+#
+# ## ###############################################
+
+
 #include <Wire.h>
 
  // Constants
