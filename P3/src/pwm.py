@@ -2,10 +2,11 @@
 # -*- coding: utf-8 -*-
 # ## ###############################################
 #
-# marquee.py
-# Blinks a led on pin 32 using Raspberry Pi
+# program: pwm.py
+# Controls brightness of a LED with pwm
 #
 # Autor: César Martínez
+#        Lisset Noriega Domínguez
 # License: MIT
 #
 # ## ###############################################
@@ -15,8 +16,6 @@
 import RPi.GPIO as GPIO
 # Imports sleep functon
 from time import sleep
-# Initializes virtual board (comment out for hardware deploy)
-#import virtualboard
 
 led_PWM = 12
 # Set up Rpi.GPIO library to use physical pin numbers
@@ -40,5 +39,5 @@ while True:
         pwmController.ChangeDutyCycle(100-i)
         sleep(timeWaiting)
 
-pwmController,stop()
+pwmController.stop()
 GPIO.cleanup()
