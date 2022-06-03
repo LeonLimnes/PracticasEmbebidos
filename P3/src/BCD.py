@@ -1,3 +1,13 @@
+# ## ###############################################
+#
+# createUSB_rule.py
+# 
+#
+# Autor: César Augusto Martínez Franco
+#        Lisset Noriega Domínguez
+# License: MIT
+#
+# ## ###############################################
 # Importa la librería de control del GPIO de la Raspberry Pi
 import RPi.GPIO as GPIO
 # Importa la función sleep del módulo time
