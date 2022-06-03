@@ -20,8 +20,7 @@ import json
 import magic
 from led_manager import leds, bcd, marquee
 from http.server import BaseHTTPRequestHandler, HTTPServer
-# import time
-# import time
+
 
 # Nombre o dirección IP del sistema anfitrión del servidor web
 # address = "localhost"
