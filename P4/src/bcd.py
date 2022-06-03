@@ -2,11 +2,12 @@
 # -*- coding: utf-8 -*-
 # ## ###############################################
 #
-# pwm.py
-# Controls a 7-segments display using Raspberry Pi
-# and a 74LS47 driver
+# program: bcd.py
+# Recives binay values and shows its BCD representation on a
+# display
 #
-# Autor: Mauricio Matamoros
+# Autor: César Martínez
+#        Lisset Noriega Domínguez
 # License: MIT
 #
 # ## ###############################################
@@ -20,8 +21,6 @@ from __future__ import print_function
 import RPi.GPIO as GPIO
 # Imports sleep functon
 from time import sleep
-# Initializes virtual board (comment for hardware deploy)
-#import virtualboard
 
 # Set up Rpi.GPIO library to use physical pin numbers
 GPIO.setmode(GPIO.BOARD)
