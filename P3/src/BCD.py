@@ -1,9 +1,9 @@
 # ## ###############################################
 #
-# createUSB_rule.py
-# 
+# program: bcd.py
+# Converts input to BCD and shows it on a display
 #
-# Autor: César Augusto Martínez Franco
+# Autor: César Martínez
 #        Lisset Noriega Domínguez
 # License: MIT
 #
