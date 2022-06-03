@@ -5,13 +5,16 @@
 # -*- coding: utf-8 -*-
 # ## ###############################################
 #
-# marquee.py
+# program: marquee.py
 # Blinks a led on pin 32 using Raspberry Pi
 #
 # Autor: César Martínez
+#        Lisset Noriega Domínguez
 # License: MIT
 #
 # ## ###############################################
+
+
 
 
 # Import Raspberry Pi's GPIO control library
@@ -34,4 +37,3 @@ while True:
         GPIO.output(led, GPIO.HIGH)
         sleep(1)
         GPIO.output(led, GPIO.LOW)
-        #sleep(0.5)
